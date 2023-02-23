@@ -1,8 +1,7 @@
-//
-//  GoalCrusherViewProtocol.swift
-//  GoalCrusher
-//
-//  Created by Christoper Kellum on 2/18/23.
-//
+import SwiftUI
 
-import Foundation
+protocol GoalCrusherViewProtocol: View{
+    static var title: String { get }
+    static var route: String { get }
+    static var transtionType: TransitionType { get }
+}

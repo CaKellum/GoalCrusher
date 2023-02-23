@@ -1,8 +1,7 @@
-//
-//  StringUtilities.swift
-//  GoalCrusher
-//
-//  Created by Christoper Kellum on 2/20/23.
-//
-
 import Foundation
+
+extension String? {
+
+    public var isNilOrEmpty: Bool { self?.isEmpty ?? true }
+
+}

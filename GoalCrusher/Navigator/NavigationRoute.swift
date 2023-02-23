@@ -2,7 +2,7 @@ import SwiftUI
 
 
 enum TransitionType: String {
-    case push, modal, sheet
+    case push, modal, sheet, pushClearStack
 }
 
 protocol NavigationRoute {

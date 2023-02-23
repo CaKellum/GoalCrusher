@@ -1,15 +1,20 @@
-//
-//  HomeView.swift
-//  GoalCrusher
-//
-//  Created by Christoper Kellum on 2/18/23.
-//
-
 import SwiftUI
 
-struct HomeView: View {
+struct HomeView: GoalCrusherViewProtocol {
+    static let title = "Home"
+    static let route = "/home"
+    static let transtionType = TransitionType.pushClearStack
+    @EnvironmentObject var navigator: NavigationCoordinator<NavigationMap>
+    @EnvironmentObject var sessionManager: AuthenticationSessionManager
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        navigator.navigationController.navigationBar.topItem?.title = Self.title
+        return VStack{
+            Text("Hello, World!")
+            Button(NavigationMap.goal.title) {
+                navigator.show(screen: .goal)
+            }
+        }
     }
 }
 
